@@ -1,4 +1,4 @@
-FROM prefecthq/prefect:2.8-python3.10
+FROM prefecthq/prefect:2.11-python3.10
 
 EXPOSE 4200
 
