@@ -20,7 +20,7 @@ services:
     depends_on:
       - controller
     environment:
-      - POOL_NAME=testPool
+      - POOL_NAME=${POOL_NAME}
       - PREFECT_API_URL=http://prefect_controller:4200/api
     restart: "on-failure"
 
