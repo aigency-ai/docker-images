@@ -3,8 +3,8 @@ services:
   controller:
     build:
       context: ./controller
-    expose:
-      - "4200"
+    ports:
+      - 4200:4200
     container_name: prefect_controller
     networks:
       - prefect_network
@@ -19,12 +19,22 @@ services:
       - prefect_network
     depends_on:
       - controller
+    environment:
+      - POOL_NAME=testPool
+      - PREFECT_API_URL=http://prefect_controller:4200/api
+    restart: "on-failure"
 
   postgres:
     image: postgres:15
     container_name: postgres
     networks:
       - prefect_network
+    environment:
+      - POSTGRES_DB=DB_USER
+      - POSTGRES_USER=demo_user
+      - POSTGRES_PASSWORD=password123
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
 
 networks:
   prefect_network:
