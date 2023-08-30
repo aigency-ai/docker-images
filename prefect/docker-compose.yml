@@ -1,0 +1,30 @@
+version: '3'
+services:
+  controller:
+    build:
+      context: ./controller
+    expose:
+      - "4200"
+    container_name: prefect_controller
+    networks:
+      - prefect_network
+    depends_on:
+      - postgres
+
+  worker:
+    build:
+      context: ./worker
+    container_name: prefect_worker
+    networks:
+      - prefect_network
+    depends_on:
+      - controller
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    networks:
+      - prefect_network
+
+networks:
+  prefect_network:
