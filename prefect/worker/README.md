@@ -13,12 +13,15 @@ entrypoint.sh script before building the image.
 
 ## Environment variables
 
-| Name            | Description                                           |
-| --------------- | ----------------------------------------------------- |
-| DB_HOST         | Hostname of the database server to connect to         |
-| DB_PORT         | The port of the database server to connect to         |
-| DB_USER         | The username to use for authentication                |
-| DB_PASS         | The password to use for authentication                |
-| DB_NAME         | Name of the postgres database to connect to           |
-| POOL_NAME       | The name of the worker pool to register the agent for |
-| PREFECT_API_URL | The URL of the prefect controller                     |
+| Name             | Description                                           |
+| ---------------- | ----------------------------------------------------- |
+| DB_HOST          | Hostname of the database server to connect to         |
+| DB_PORT          | The port of the database server to connect to         |
+| DB_USER          | The username to use for authentication                |
+| DB_PASS          | The password to use for authentication                |
+| DB_NAME          | Name of the postgres database to connect to           |
+| POOL_NAME        | The name of the worker pool to register the agent for |
+| PREFECT_API_URL  | The URL of the prefect controller                     |
+| POSTGRES_DB      | Name of the postgres database to connect to           |
+| POSTGRES_USER    | The username to use for authentication                |
+| POSTGRES_PASSWORD| The password to use for authentication                |
